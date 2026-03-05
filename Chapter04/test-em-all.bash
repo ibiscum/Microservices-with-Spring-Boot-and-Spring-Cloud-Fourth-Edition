@@ -4,18 +4,18 @@
 #
 #   HOST=localhost PORT=7001 ./test-em-all.bash
 #
-: ${HOST=localhost}
-: ${PORT=8080}
-: ${PROD_ID_REVS_RECS=1}
-: ${PROD_ID_NOT_FOUND=13}
-: ${PROD_ID_NO_RECS=113}
-: ${PROD_ID_NO_REVS=213}
+: "${HOST:='localhost'}"
+: "${PORT:='8080'}"
+: "${PROD_ID_REVS_RECS:='1'}"
+: "${PROD_ID_NOT_FOUND:='13'}"
+: "${PROD_ID_NO_RECS:='113'}"
+: "${PROD_ID_NO_REVS:='213'}"
 
 function assertCurl() {
 
   local expectedHttpCode=$1
   local curlCmd="$2 -w \"%{http_code}\""
-  local result=$(eval $curlCmd)
+  local result=$(eval "$curlCmd")
   local httpCode="${result:(-3)}"
   RESPONSE='' && (( ${#result} > 3 )) && RESPONSE="${result%???}"
 
