@@ -1,4 +1,5 @@
 {
     "java.configuration.updateBuildConfiguration": "interactive",
-    "gradle.nestedProjects": true
+    "gradle.nestedProjects": false,
+    "java.autobuild.enabled": false
 }
