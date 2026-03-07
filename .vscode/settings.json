@@ -1,5 +1,7 @@
 {
     "java.configuration.updateBuildConfiguration": "interactive",
     "gradle.nestedProjects": false,
-    "java.autobuild.enabled": false
+    "java.autobuild.enabled": false,
+    "java.project.encoding": "warning",
+    "java.import.gradle.enabled": false
 }
