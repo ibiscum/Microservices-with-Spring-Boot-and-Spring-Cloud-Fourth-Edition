@@ -10,6 +10,6 @@ updates:
     schedule:
       interval: "monthly"
   - package-ecosystem: "gradle" # See documentation for possible values
-    directory: "/Chapter03" # Location of package manifests
+    directory: "/Chapter03/1-spring-init" # Location of package manifests
     schedule:
       interval: "monthly"
