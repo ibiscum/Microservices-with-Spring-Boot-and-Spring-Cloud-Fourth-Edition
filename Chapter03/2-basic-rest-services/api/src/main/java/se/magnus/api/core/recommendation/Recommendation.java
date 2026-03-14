@@ -18,12 +18,12 @@ public class Recommendation {
   }
 
   public Recommendation(
-    int productId,
-    int recommendationId,
-    String author,
-    int rate,
-    String content,
-    String serviceAddress) {
+      int productId,
+      int recommendationId,
+      String author,
+      int rate,
+      String content,
+      String serviceAddress) {
 
     this.productId = productId;
     this.recommendationId = recommendationId;

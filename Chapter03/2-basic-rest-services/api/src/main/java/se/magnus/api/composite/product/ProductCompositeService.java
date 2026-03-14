@@ -11,8 +11,6 @@ public interface ProductCompositeService {
    * @param productId Id of the product
    * @return the composite product info, if found, else null
    */
-  @GetMapping(
-    value = "/product-composite/{productId}",
-    produces = "application/json")
+  @GetMapping(value = "/product-composite/{productId}", produces = "application/json")
   ProductAggregate getProduct(@PathVariable int productId);
 }

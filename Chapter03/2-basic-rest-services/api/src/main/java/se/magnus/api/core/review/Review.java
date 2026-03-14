@@ -18,12 +18,12 @@ public class Review {
   }
 
   public Review(
-    int productId,
-    int reviewId,
-    String author,
-    String subject,
-    String content,
-    String serviceAddress) {
+      int productId,
+      int reviewId,
+      String author,
+      String subject,
+      String content,
+      String serviceAddress) {
 
     this.productId = productId;
     this.reviewId = reviewId;

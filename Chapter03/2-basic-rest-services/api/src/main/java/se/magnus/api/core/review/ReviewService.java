@@ -12,8 +12,6 @@ public interface ReviewService {
    * @param productId Id of the product
    * @return the reviews of the product
    */
-  @GetMapping(
-    value = "/review",
-    produces = "application/json")
+  @GetMapping(value = "/review", produces = "application/json")
   List<Review> getReviews(@RequestParam(value = "productId", required = true) int productId);
 }

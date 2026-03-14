@@ -12,9 +12,7 @@ public interface RecommendationService {
    * @param productId Id of the product
    * @return the recommendations of the product
    */
-  @GetMapping(
-    value = "/recommendation",
-    produces = "application/json")
+  @GetMapping(value = "/recommendation", produces = "application/json")
   List<Recommendation> getRecommendations(
-    @RequestParam(value = "productId", required = true) int productId);
+      @RequestParam(value = "productId", required = true) int productId);
 }
