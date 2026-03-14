@@ -4,12 +4,12 @@
 #
 #   HOST=localhost PORT=7001 ./test-em-all.bash
 #
-: "${HOST:='localhost'}"
-: "${PORT:='8080'}"
-: "${PROD_ID_REVS_RECS:='1'}"
-: "${PROD_ID_NOT_FOUND:='13'}"
-: "${PROD_ID_NO_RECS:='113'}"
-: "${PROD_ID_NO_REVS:='213'}"
+: "${HOST:=localhost}"
+: "${PORT:=8080}"
+: "${PROD_ID_REVS_RECS:=1}"
+: "${PROD_ID_NOT_FOUND:=13}"
+: "${PROD_ID_NO_RECS:=113}"
+: "${PROD_ID_NO_REVS:=213}"
 
 function assertCurl() {
 
@@ -51,7 +51,8 @@ function assertEqual() {
 }
 
 function testUrl() {
-  url=$@
+  url=$(printf '%s' "$@")
+
   if $url -ks -f -o /dev/null
   then
     return 0
@@ -61,7 +62,8 @@ function testUrl() {
 }
 
 function waitForService() {
-  url="$@"
+  url=$(printf ' %s' "$@")
+
   echo -n "Wait for: $url... "
   n=0
   until testUrl "$url"
@@ -86,7 +88,7 @@ echo "Start Tests:" "$(date)"
 echo "HOST=${HOST}"
 echo "PORT=${PORT}"
 
-if [[ "$@" == *"start"* ]]
+if [[ "$*" == *"start"* ]]
 then
   echo "Restarting the test environment..."
   echo "$ docker compose down --remove-orphans"
@@ -95,7 +97,7 @@ then
   docker compose up -d
 fi
 
-waitForService curl http://"$HOST":"$PORT"/product-composite/"$PROD_ID_REVS_RECS"
+waitForService curl "http://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS"
 
 # Verify that a normal request works, expect three recommendations and three reviews
 assertCurl 200 "curl http://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS -s"
@@ -127,7 +129,7 @@ assertEqual "\"Invalid productId: -1\"" "$(echo "$RESPONSE" | jq .message)"
 assertCurl 400 "curl http://$HOST:$PORT/product-composite/invalidProductId -s"
 assertEqual "\"Type mismatch.\"" "$(echo "$RESPONSE"  | jq .message)"
 
-if [[ $@ == *"stop"* ]]
+if [[ $* == *"stop"* ]]
 then
     echo "We are done, stopping the test environment..."
     echo "$ docker compose down"
