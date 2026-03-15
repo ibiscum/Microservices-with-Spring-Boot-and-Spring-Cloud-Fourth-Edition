@@ -17,4 +17,16 @@ updates:
     directory: "/Chapter03/2-basic-rest-services" # Location of package manifests
     schedule:
       interval: "monthly"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/Chapter04" # Location of package manifests
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/Chapter05" # Location of package manifests
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/Chapter06" # Location of package manifests
+    schedule:
+      interval: "monthly"
 
