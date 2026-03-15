@@ -31,6 +31,8 @@
     docker compose logs -f
     docker compose down
 
+    ./gradlew clean build && docker compose build && ./test-em-all.bash start stop
+
 
 
 
