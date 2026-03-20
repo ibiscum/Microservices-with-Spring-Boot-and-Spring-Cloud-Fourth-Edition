@@ -5,4 +5,4 @@
     docker run -t --rm -v ${PWD}:/app zavoloklom/dclint ./docker-compose-partitions.yml
 
     ./gradlew :microservices:recommendation-service:test
-    ./gradlew build
+    ./gradlew build -x test
