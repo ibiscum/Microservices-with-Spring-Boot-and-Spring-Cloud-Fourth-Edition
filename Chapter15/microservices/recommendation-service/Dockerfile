@@ -1,9 +1,10 @@
-FROM eclipse-temurin:24_36-jre-noble AS builder
+
+FROM eclipse-temurin:25-jre-ubi10-minimal AS builder
 WORKDIR /extracted
 ADD ./build/libs/*.jar app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
 
-FROM eclipse-temurin:24_36-jre-noble
+FROM eclipse-temurin:25-jre-ubi10-minimal
 WORKDIR /application
 COPY --from=builder /extracted/dependencies/ ./
 COPY --from=builder /extracted/spring-boot-loader/ ./
