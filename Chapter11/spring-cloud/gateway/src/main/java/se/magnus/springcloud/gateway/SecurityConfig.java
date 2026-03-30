@@ -15,16 +15,16 @@ public class SecurityConfig {
   @Bean
   SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) throws Exception {
     http
-      .csrf(csrf -> csrf.disable()
-        .authorizeExchange(exchange -> exchange
-          .pathMatchers("/headerrouting/**").permitAll()
-          .pathMatchers("/actuator/**").permitAll()
-          .pathMatchers("/eureka/**").permitAll()
-          .pathMatchers("/oauth2/**").permitAll()
-          .pathMatchers("/login/**").permitAll()
-          .pathMatchers("/error/**").permitAll()
-          .pathMatchers("/openapi/**").permitAll()
-          .anyExchange().authenticated()))
+      .csrf(Customizer.withDefaults())
+      .authorizeExchange(exchange -> exchange
+        .pathMatchers("/headerrouting/**").permitAll()
+        .pathMatchers("/actuator/**").permitAll()
+        .pathMatchers("/eureka/**").permitAll()
+        .pathMatchers("/oauth2/**").permitAll()
+        .pathMatchers("/login/**").permitAll()
+        .pathMatchers("/error/**").permitAll()
+        .pathMatchers("/openapi/**").permitAll()
+        .anyExchange().authenticated())
       .oauth2ResourceServer(server -> server
         .jwt(Customizer.withDefaults()));
     return http.build();
