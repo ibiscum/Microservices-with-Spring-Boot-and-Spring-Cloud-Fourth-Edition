@@ -1,8 +1,9 @@
 # Microservices with Spring Boot and Spring Cloud - Chapter 4
 
     docker run -t --rm -v ${PWD}:/app zavoloklom/dclint ./docker-compose.yml
+    docker run --rm -i hadolint/hadolint < Dockerfile
 
-    echo 'Runtime.getRuntime().availableProcessors()' | docker run --rm -i eclipse-temurin:24 jshell -q
+    echo 'Runtime.getRuntime().availableProcessors()' | docker run --rm -i eclipse-temurin:25-jre-ubi10-minimal jshell -q
     echo 'Runtime.getRuntime().availableProcessors()' | docker run --rm -i --cpus=3 eclipse-temurin:24 jshell -q
     docker run -it --rm eclipse-temurin:24 java -XX:+PrintFlagsFinal | grep "size_t MaxHeapSize"
     docker run -it --rm -m=1024M eclipse-temurin:24 java -XX:+PrintFlagsFinal | grep "size_t MaxHeapSize"

@@ -1,6 +1,6 @@
 FROM eclipse-temurin:25-jre-ubi10-minimal AS builder
 WORKDIR /extracted
-ADD ./build/libs/*.jar app.jar
+COPY ./build/libs/*.jar app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
 
 FROM eclipse-temurin:25-jre-ubi10-minimal
