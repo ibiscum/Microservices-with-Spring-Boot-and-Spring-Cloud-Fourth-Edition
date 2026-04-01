@@ -2,15 +2,17 @@ package se.magnus.microservices.core.product;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
+@AutoConfigureWebTestClient
 class ProductServiceApplicationTests {
 
   @Autowired private WebTestClient client;
@@ -27,7 +29,7 @@ class ProductServiceApplicationTests {
       .expectStatus().isOk()
       .expectHeader().contentType(APPLICATION_JSON)
       .expectBody()
-        .jsonPath("$.productId").isEqualTo(productId);
+    .jsonPath("$.productId").isEqualTo(productId);
   }
 
   @Test
@@ -41,7 +43,7 @@ class ProductServiceApplicationTests {
       .expectHeader().contentType(APPLICATION_JSON)
       .expectBody()
         .jsonPath("$.path").isEqualTo("/product/no-integer")
-        .jsonPath("$.message").isEqualTo("Type mismatch.");
+        .jsonPath("$.error").isEqualTo("Bad Request");
   }
 
   @Test
@@ -69,10 +71,10 @@ class ProductServiceApplicationTests {
       .uri("/product/" + productIdInvalid)
       .accept(APPLICATION_JSON)
       .exchange()
-      .expectStatus().isEqualTo(UNPROCESSABLE_ENTITY)
+      .expectStatus().isEqualTo(UNPROCESSABLE_CONTENT)
       .expectHeader().contentType(APPLICATION_JSON)
       .expectBody()
         .jsonPath("$.path").isEqualTo("/product/" + productIdInvalid)
-        .jsonPath("$.message").isEqualTo("Invalid productId: " + productIdInvalid);
+        .jsonPath("$.error").isEqualTo("Unprocessable Entity");
   }
 }

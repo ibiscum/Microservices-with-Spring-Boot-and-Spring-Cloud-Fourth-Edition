@@ -1,8 +1,9 @@
 plugins {
-    id 'org.springframework.boot' version '3.5.13'
-    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.springframework.boot' version '4.0.5'
     id 'java'
 }
+
+apply plugin: 'io.spring.dependency-management'
 
 group = 'se.magnus.microservices.core.product'
 version = '1.0.0-SNAPSHOT'
@@ -26,12 +27,16 @@ dependencies {
     implementation project(':util')
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    // implementation platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
 
     // To avoid the following error message on Apple silicon (for details, see https://github.com/netty/netty/issues/11693):
     // Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS.
     implementation 'io.netty:netty-resolver-dns-native-macos:4.1.97.Final:osx-aarch_64'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webclient-test'
+    testImplementation 'org.springframework.boot:spring-boot-webtestclient'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'io.projectreactor:reactor-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
