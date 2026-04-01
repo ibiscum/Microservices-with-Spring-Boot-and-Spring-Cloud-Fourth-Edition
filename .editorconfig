@@ -17,7 +17,7 @@ charset = utf-8
 # 4 space indentation
 [*.{py,java,xml,json,gradle}]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # Tab indentation (no size specified)
 [Makefile]
