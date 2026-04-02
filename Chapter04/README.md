@@ -16,6 +16,7 @@
     ./gradlew :microservices:review-service:build
 
     cd microservices/product-service
+    docker run --rm -i hadolint/hadolint < Dockerfile
     docker build -t product-service .
     docker images | grep product-service
     docker run --rm -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" product-service
@@ -33,10 +34,3 @@
     docker compose down
 
     ./gradlew clean build && docker compose build && ./test-em-all.bash start stop
-
-
-
-
-
-
-
