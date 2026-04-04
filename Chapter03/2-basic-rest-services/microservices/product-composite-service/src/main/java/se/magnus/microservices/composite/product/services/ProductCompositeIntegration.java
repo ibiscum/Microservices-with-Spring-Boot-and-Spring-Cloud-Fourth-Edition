@@ -2,7 +2,7 @@ package se.magnus.microservices.composite.product.services;
 
 import static org.springframework.http.HttpMethod.GET;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,8 +85,8 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
   private String getErrorMessage(HttpClientErrorException ex) {
     try {
       return mapper.readValue(ex.getResponseBodyAsString(), HttpErrorInfo.class).getMessage();
-    } catch (IOException ioex) {
-      return ex.getMessage();
+    } catch (Exception e) {
+      return e.getMessage();
     }
   }
 
