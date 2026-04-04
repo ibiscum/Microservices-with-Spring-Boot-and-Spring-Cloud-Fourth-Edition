@@ -29,4 +29,15 @@ updates:
     directory: "/Chapter06" # Location of package manifests
     schedule:
       interval: "monthly"
-
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/Chapter07" # Location of package manifests
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/Chapter09" # Location of package manifests
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/Chapter10" # Location of package manifests
+    schedule:
+      interval: "monthly"
