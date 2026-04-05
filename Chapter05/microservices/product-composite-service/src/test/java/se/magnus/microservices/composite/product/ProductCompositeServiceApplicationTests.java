@@ -3,7 +3,7 @@ package se.magnus.microservices.composite.product;
 import static java.util.Collections.singletonList;
 import static org.mockito.Mockito.when;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -18,8 +18,11 @@ import se.magnus.api.core.review.Review;
 import se.magnus.api.exceptions.InvalidInputException;
 import se.magnus.api.exceptions.NotFoundException;
 import se.magnus.microservices.composite.product.services.ProductCompositeIntegration;
+import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
+
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
+@AutoConfigureWebTestClient
 class ProductCompositeServiceApplicationTests {
 
   private static final int PRODUCT_ID_OK = 1;
@@ -86,7 +89,7 @@ class ProductCompositeServiceApplicationTests {
       .uri("/product-composite/" + PRODUCT_ID_INVALID)
       .accept(APPLICATION_JSON)
       .exchange()
-      .expectStatus().isEqualTo(UNPROCESSABLE_ENTITY)
+      .expectStatus().isEqualTo(UNPROCESSABLE_CONTENT)
       .expectHeader().contentType(APPLICATION_JSON)
       .expectBody()
         .jsonPath("$.path").isEqualTo("/product-composite/" + PRODUCT_ID_INVALID)
