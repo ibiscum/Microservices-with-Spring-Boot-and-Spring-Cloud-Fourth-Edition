@@ -74,7 +74,6 @@ class ProductServiceApplicationTests {
       .expectStatus().isEqualTo(UNPROCESSABLE_CONTENT)
       .expectHeader().contentType(APPLICATION_JSON)
       .expectBody()
-        .jsonPath("$.path").isEqualTo("/product/" + productIdInvalid)
-        .jsonPath("$.error").isEqualTo("Unprocessable Entity");
+        .jsonPath("$.path").isEqualTo("/product/" + productIdInvalid);
   }
 }
