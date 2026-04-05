@@ -1,4 +1,4 @@
-name: Conditional Multi-Project Tests
+name: Conditional Tests
 
 on:
   push:
@@ -23,6 +23,7 @@ jobs:
             ch03-init: 'Chapter03/1-spring-init/**'
             ch03-basic: 'Chapter03/2-basic-rest-services/**'
             ch04: 'Chapter04/**'
+            ch05: 'Chapter05/**'
 
   # 2. SCHRITT: Tests nur für geänderte Projekte ausführen
   test:
