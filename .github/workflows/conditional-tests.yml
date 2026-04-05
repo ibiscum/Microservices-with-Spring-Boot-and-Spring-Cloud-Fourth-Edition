@@ -8,33 +8,34 @@ on:
 
 jobs:
   # 1. SCHRITT: Änderungen erkennen
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      # Hier definieren wir Variablen für die nachfolgenden Jobs
-      projects: ${{ steps.filter.outputs.changes }}
-    steps:
-      - uses: actions/checkout@v6
-      - uses: dorny/paths-filter@v4
-        id: filter
-        with:
-          # Definiere hier deine Projektordner und die Pfade, auf die sie reagieren
-          filters: |
-            ch03-init: 'Chapter03/1-spring-init/**'
-            ch03-basic: 'Chapter03/2-basic-rest-services/**'
-            ch04: 'Chapter04/**'
-            ch05: 'Chapter05/**'
+  # changes:
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     # Hier definieren wir Variablen für die nachfolgenden Jobs
+  #     projects: ${{ steps.filter.outputs.changes }}
+  #   steps:
+  #     - uses: actions/checkout@v6
+  #     - uses: dorny/paths-filter@v4
+  #       id: filter
+  #       with:
+  #         # Definiere hier deine Projektordner und die Pfade, auf die sie reagieren
+  #         filters: |
+  #           ch03-init: 'Chapter03/1-spring-init/**'
+  #           ch03-basic: 'Chapter03/2-basic-rest-services/**'
+  #           ch04: 'Chapter04/**'
+  #           ch05: 'Chapter05/**'
 
   # 2. SCHRITT: Tests nur für geänderte Projekte ausführen
   test:
-    needs: changes
+    # needs: changes
     # Der Job wird nur gestartet, wenn mindestens ein Projekt geändert wurde
-    if: ${{ needs.changes.outputs.projects != '[]' && needs.changes.outputs.projects != '' }}
+    # if: ${{ needs.changes.outputs.projects != '[]' && needs.changes.outputs.projects != '' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
         # Die Matrix wird dynamisch aus den erkannten Änderungen befüllt
-        project: ${{ fromJSON(needs.changes.outputs.projects) }}
+        # project: ${{ fromJSON(needs.changes.outputs.projects) }}
+        project: [./Chapter03/1-spring-init, ./Chapter03/2-basic-rest-services, ./Chapter04]
 
     steps:
       - name: Checkout Code
@@ -48,8 +49,6 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
-        with:
-          build-root-directory: ./${{ matrix.project }}
 
       - name: Run Tests in ${{ matrix.project }}
         working-directory: ./${{ matrix.project }}
