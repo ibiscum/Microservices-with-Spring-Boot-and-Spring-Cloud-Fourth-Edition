@@ -13,7 +13,6 @@ import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTest
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @AutoConfigureWebTestClient
-
 class ReviewServiceApplicationTests {
 
   @Autowired

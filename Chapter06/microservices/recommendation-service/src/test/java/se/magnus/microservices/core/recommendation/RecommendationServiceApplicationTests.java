@@ -28,7 +28,7 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase {
   void setupDb() {
     repository.deleteAll();
   }
-  
+
   @Test
   void getRecommendationsByProductId() {
 
@@ -58,7 +58,7 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase {
 
     assertEquals(1, repository.count());
 
-    postAndVerifyRecommendation(productId, recommendationId, UNPROCESSABLE_ENTITY)
+    postAndVerifyRecommendation(productId, recommendationId, UNPROCESSABLE_CONTENT)
       .jsonPath("$.path").isEqualTo("/recommendation")
       .jsonPath("$.message").isEqualTo("Duplicate key, Product Id: 1, Recommendation Id:1");
 
@@ -108,7 +108,7 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase {
 
     int productIdInvalid = -1;
 
-    getAndVerifyRecommendationsByProductId("?productId=" + productIdInvalid, UNPROCESSABLE_ENTITY)
+    getAndVerifyRecommendationsByProductId("?productId=" + productIdInvalid, UNPROCESSABLE_CONTENT)
       .jsonPath("$.path").isEqualTo("/recommendation")
       .jsonPath("$.message").isEqualTo("Invalid productId: " + productIdInvalid);
   }
@@ -147,5 +147,5 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase {
       .expectStatus().isEqualTo(expectedStatus)
       .expectBody();
   }
-    
+
 }

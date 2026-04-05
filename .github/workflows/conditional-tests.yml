@@ -35,7 +35,7 @@ jobs:
       matrix:
         # Die Matrix wird dynamisch aus den erkannten Änderungen befüllt
         # project: ${{ fromJSON(needs.changes.outputs.projects) }}
-        project: [./Chapter03/1-spring-init, ./Chapter03/2-basic-rest-services, ./Chapter04]
+        project: [./Chapter03/1-spring-init, ./Chapter03/2-basic-rest-services, ./Chapter04, ./Chapter05]
 
     steps:
       - name: Checkout Code
