@@ -8,6 +8,9 @@ services:
 
   product-composite:
     build: microservices/product-composite-service
+    depends_on:
+      review:
+        condition: service_started
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
@@ -16,12 +19,18 @@ services:
 
   recommendation:
     build: microservices/recommendation-service
+    depends_on:
+      product:
+        condition: service_started
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     mem_limit: 512m
 
   review:
     build: microservices/review-service
+    depends_on:
+      recommendation:
+        condition: service_started
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     mem_limit: 512m

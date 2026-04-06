@@ -32,3 +32,8 @@ app:
   review-service:
     host: review
     port: 8080
+
+logging:
+  level:
+    root: INFO
+    se.magnus: DEBUG

@@ -75,7 +75,7 @@ function waitForService() {
       exit 1
     else
       sleep 3
-      echo -n ", retry #$n "
+      echo -n ", retry #$n"
     fi
   done
   echo "DONE, continues..."
@@ -100,7 +100,7 @@ fi
 waitForService curl "http://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS"
 
 # Verify that a normal request works, expect three recommendations and three reviews
-assertCurl 200 "curl http://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS -s"
+assertCurl 200 "curl 'http://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS' -s"
 assertEqual "$PROD_ID_REVS_RECS" "$(echo "$RESPONSE" | jq .productId)"
 assertEqual 3 "$(echo "$RESPONSE" | jq ".recommendations | length")"
 assertEqual 3 "$(echo "$RESPONSE" | jq ".reviews | length")"

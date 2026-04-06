@@ -59,7 +59,7 @@ class ProductServiceApplicationTests {
       .expectHeader().contentType(APPLICATION_JSON)
       .expectBody()
         .jsonPath("$.path").isEqualTo("/product/" + productIdNotFound)
-        .jsonPath("$.message").isEqualTo("No product found for productId: " + productIdNotFound);
+        .jsonPath("$.message").isEqualTo("no product found for productId: " + productIdNotFound);
   }
 
   @Test

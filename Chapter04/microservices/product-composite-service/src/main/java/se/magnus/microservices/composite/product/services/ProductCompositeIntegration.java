@@ -58,10 +58,15 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
     try {
       String url = productServiceUrl + productId;
-      LOG.debug("Will call getProduct API on URL: {}", url);
+      LOG.debug("will call getProduct API on URL: {}", url);
 
+      // Product product = restTemplate.getForObject(url, Product.class);
       Product product = restTemplate.getForObject(url, Product.class);
-      LOG.debug("Found a product with id: {}", product.getProductId());
+      ObjectMapper mapper = new ObjectMapper();
+      String jsonString = mapper.writeValueAsString(product);
+      LOG.debug("product: {}", jsonString);
+
+      LOG.debug("found a product with id: {}", product.getProductId());
 
       return product;
 
@@ -75,8 +80,8 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
           throw new InvalidInputException(getErrorMessage(ex));
 
         default:
-          LOG.warn("Got an unexpected HTTP error: {}, will rethrow it", ex.getStatusCode());
-          LOG.warn("Error body: {}", ex.getResponseBodyAsString());
+          LOG.warn("got an unexpected HTTP error: {}, will rethrow it", ex.getStatusCode());
+          LOG.warn("error body: {}", ex.getResponseBodyAsString());
           throw ex;
       }
     }

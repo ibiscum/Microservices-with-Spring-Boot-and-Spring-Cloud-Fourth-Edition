@@ -25,11 +25,11 @@ public class RecommendationServiceImpl implements RecommendationService {
   public List<Recommendation> getRecommendations(int productId) {
 
     if (productId < 1) {
-      throw new InvalidInputException("Invalid productId: " + productId);
+      throw new InvalidInputException("invalid productId: " + productId);
     }
 
     if (productId == 113) {
-      LOG.debug("No recommendations found for productId: {}", productId);
+      LOG.debug("no recommendations found for productId: {}", productId);
       return new ArrayList<>();
     }
 
@@ -38,7 +38,7 @@ public class RecommendationServiceImpl implements RecommendationService {
     list.add(new Recommendation(productId, 2, "Author 2", 2, "Content 2", serviceUtil.getServiceAddress()));
     list.add(new Recommendation(productId, 3, "Author 3", 3, "Content 3", serviceUtil.getServiceAddress()));
 
-    LOG.debug("/recommendation response size: {}", list.size());
+    LOG.debug("recommendation response for productId: {} with size: {}", productId, list.size());
 
     return list;
   }
