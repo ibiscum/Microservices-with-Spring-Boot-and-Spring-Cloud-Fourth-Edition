@@ -8,9 +8,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
     <groupId>se.magnus.microservices.composite.product</groupId>
-    <artifactId>ch03-spring-init-product-composite-service</artifactId>
+    <artifactId>ch03-init-product-composite-service</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>ch03-spring-init-product-composite-service</name>
+    <name>ch03-init-product-composite-service</name>
     <description>Spring Init Product Composite Service</description>
     <properties>
         <java.version>25</java.version>

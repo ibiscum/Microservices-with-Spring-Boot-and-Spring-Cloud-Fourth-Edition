@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-mkdir microservices
-cd microservices
-
 spring init \
---boot-version=3.5.0 \
---type=gradle-project \
---java-version=24 \
+--boot-version=4.0.5 \
+--type=maven-project \
+--java-version=25 \
 --packaging=jar \
 --name=product-service \
 --package-name=se.magnus.microservices.core.product \
@@ -16,9 +13,9 @@ spring init \
 product-service
 
 spring init \
---boot-version=3.5.0 \
---type=gradle-project \
---java-version=24 \
+--boot-version=4.0.5 \
+--type=maven-project \
+--java-version=25 \
 --packaging=jar \
 --name=review-service \
 --package-name=se.magnus.microservices.core.review \
@@ -28,9 +25,9 @@ spring init \
 review-service
 
 spring init \
---boot-version=3.5.0 \
---type=gradle-project \
---java-version=24 \
+--boot-version=4.0.5 \
+--type=maven-project \
+--java-version=25 \
 --packaging=jar \
 --name=recommendation-service \
 --package-name=se.magnus.microservices.core.recommendation \
@@ -40,9 +37,9 @@ spring init \
 recommendation-service
 
 spring init \
---boot-version=3.5.0 \
---type=gradle-project \
---java-version=24 \
+--boot-version=4.0.5 \
+--type=maven-project \
+--java-version=25 \
 --packaging=jar \
 --name=product-composite-service \
 --package-name=se.magnus.microservices.composite.product \

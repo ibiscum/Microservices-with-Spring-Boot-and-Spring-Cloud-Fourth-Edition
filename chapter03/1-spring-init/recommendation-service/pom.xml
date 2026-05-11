@@ -8,9 +8,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
     <groupId>se.magnus.microservices.core.recommendation</groupId>
-    <artifactId>ch03-spring-init-recommendation-service</artifactId>
+    <artifactId>ch03-init-recommendation-service</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>ch03-spring-init-recommendation-service</name>
+    <name>ch03-init-recommendation-service</name>
     <description>Spring Init Recommendation Service</description>
     <properties>
         <java.version>25</java.version>
