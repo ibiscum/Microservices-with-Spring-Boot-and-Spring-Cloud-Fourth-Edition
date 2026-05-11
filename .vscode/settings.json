@@ -3,5 +3,6 @@
     "gradle.nestedProjects": false,
     "java.autobuild.enabled": false,
     "java.project.encoding": "warning",
-    "java.import.gradle.enabled": false
+    "java.import.gradle.enabled": false,
+    "java.dependency.packagePresentation": "hierarchical"
 }

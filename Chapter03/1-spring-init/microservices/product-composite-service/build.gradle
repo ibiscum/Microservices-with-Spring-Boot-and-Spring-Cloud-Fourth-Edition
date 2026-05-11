@@ -4,6 +4,7 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven-publish'
 
 group = 'se.magnus.microservices.composite.product'
 version = '1.0.0-SNAPSHOT'
@@ -24,6 +25,16 @@ dependencies {
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
   testImplementation 'io.projectreactor:reactor-test'
   testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+publishing {
+  publications {
+    customLibrary(MavenPublication) {
+      groupId = 'se.magnus.microservices.composite.product'
+      artifactId = 'convert-gradle-to-maven'
+      version = '0.0.1-maven'
+    }
+  }
 }
 
 tasks.named('test') {
