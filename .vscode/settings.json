@@ -1,8 +1,9 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.updateBuildConfiguration": "automatic",
     "gradle.nestedProjects": false,
     "java.autobuild.enabled": false,
     "java.project.encoding": "warning",
     "java.import.gradle.enabled": false,
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.compile.nullAnalysis.mode": "automatic"
 }
