@@ -1,13 +1,13 @@
 name: chapter05
 services:
   product:
-    build: microservices/product-service
+    image: ch05-product-service:1.0.0-SNAPSHOT
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     mem_limit: 512m
 
   product-composite:
-    build: microservices/product-composite-service
+    image: ch05-product-composite-service:1.0.0-SNAPSHOT
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
@@ -15,13 +15,13 @@ services:
     mem_limit: 512m
 
   recommendation:
-    build: microservices/recommendation-service
+    image: ch05-recommendation-service:1.0.0-SNAPSHOT
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     mem_limit: 512m
 
   review:
-    build: microservices/review-service
+    image: ch05-review-service:1.0.0-SNAPSHOT
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     mem_limit: 512m
