@@ -12,6 +12,7 @@
         <java.version>25</java.version>
         <spring-boot.version>4.0.6</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <netty.version>4.2.13.Final</netty.version>
     </properties>
 
     <dependencyManagement>
