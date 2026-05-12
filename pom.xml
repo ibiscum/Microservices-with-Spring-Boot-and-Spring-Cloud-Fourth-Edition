@@ -32,71 +32,13 @@
     <module>chapter04/product-composite-service</module>
     <module>chapter04/product-service</module>
     <module>chapter04/recommendation-service</module>
-    <!--
     <module>chapter04/review-service</module>
-
-    
-    <module>chapter2/recipe2-4/footballauth</module>
-    <module>chapter2/recipe2-4/footballresource</module>
-    <module>chapter2/recipe2-4/footballui</module>
-    <module>chapter2/recipe2-5/footballauth</module>
-    <module>chapter2/recipe2-5/footballresource</module>
-    <module>chapter2/recipe2-5/footballui</module>
-    <module>chapter2/recipe2-6/footballauth</module>
-    <module>chapter2/recipe2-6/footballresource</module>
-    <module>chapter2/recipe2-6/footballui</module>
-    <module>chapter2/recipe2-6/theresmore/footballresource</module>
-    <module>chapter2/recipe2-6/theresmore/footballui</module> -->
-
-   <!--
-    <module>chapter3/recipe3-2/footballobs</module>
-    <module>chapter3/recipe3-3/footballobs</module>
-    <module>chapter3/recipe3-4/footballclient</module>
-    <module>chapter3/recipe3-4/footballobs</module>
-    <module>chapter3/recipe3-5/footballclient</module>
-    <module>chapter3/recipe3-5/footballobs</module>
-    <module>chapter3/recipe3-6/footballclient</module>
-    <module>chapter3/recipe3-6/footballobs</module>
-    <module>chapter3/recipe3-7/footballclient</module>
-    <module>chapter3/recipe3-7/footballobs</module>
-    <module>chapter3/recipe3-8/footballclient</module>
-    <module>chapter3/recipe3-8/footballobs</module> -->
-
-   <!--
-    s<module>chapter4/recipe4-1/registry</module>
-    <module>chapter4/recipe4-2/albums</module>
-    <module>chapter4/recipe4-2/football</module>
-    <module>chapter4/recipe4-2/registry</module>
-    <module>chapter4/recipe4-3/albums</module>
-    <module>chapter4/recipe4-3/football</module>
-    <module>chapter4/recipe4-3/registry</module>
-    <module>chapter4/recipe4-3-experimental/albums</module> -->
-
-    <!-- <module>chapter5/recipe5-1/footballpg</module>
-    <module>chapter5/recipe5-2/footballpg</module> -->
-
-    <!--
-    <module>chapter6/recipe6-6/footballmdb</module>
-    <module>chapter6/recipe6-7/footballcdb</module>
-    <module>chapter6/recipe6-8/footballcdb</module>
-    <module>chapter6/recipe6-9/footballcdb</module>
-    <module>chapter6/recipe6-10/footballcdb</module>
-    -->
-
-
-    <!-- s<module>chapter9/recipe9-8/football</module> -->
-
-    <!--
-    <module>chapter4/recipe4-3-experimental/football</module>
-    <module>chapter4/recipe4-3-experimental/registry</module>
-    <module>chapter4/recipe4-3-new/albums</module>
-    <module>chapter4/recipe4-3-new/football</module>
-    <module>chapter4/recipe4-3-new/registry</module>
-    <module>chapter4/recipe4-4/albums</module>
-    <module>chapter4/recipe4-4/football</module>
-    <module>chapter4/recipe4-4/gateway</module>
-    <module>chapter4/recipe4-4/registry</module>
-    -->
+    <module>chapter05/api</module>
+    <module>chapter05/util</module>
+    <module>chapter05/product-composite-service</module>
+    <module>chapter05/product-service</module>
+    <module>chapter05/recommendation-service</module>
+    <module>chapter05/review-service</module>
   </modules>
 
 </project>
