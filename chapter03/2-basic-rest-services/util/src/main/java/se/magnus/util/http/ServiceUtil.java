@@ -23,6 +23,7 @@ public class ServiceUtil {
   public String getServiceAddress() {
     if (serviceAddress == null) {
       serviceAddress = findMyHostname() + "/" + findMyIpAddress() + ":" + port;
+      LOG.debug("Generated service address: {}", serviceAddress);
     }
     return serviceAddress;
   }
