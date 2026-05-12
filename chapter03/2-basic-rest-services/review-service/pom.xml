@@ -14,6 +14,7 @@
     <description>Spring Basic Review Service</description>
     <properties>
         <java.version>25</java.version>
+
     </properties>
     <dependencies>
 

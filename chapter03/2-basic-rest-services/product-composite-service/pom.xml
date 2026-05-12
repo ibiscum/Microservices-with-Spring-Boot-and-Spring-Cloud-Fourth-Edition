@@ -14,6 +14,7 @@
     <description>Spring Basic REST Services Product Composite Service</description>
     <properties>
         <java.version>25</java.version>
+        <netty.version>4.2.13.Final</netty.version>
     </properties>
     <dependencies>
 
