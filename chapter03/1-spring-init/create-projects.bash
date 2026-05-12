@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 spring init \
---boot-version=4.0.5 \
+--boot-version=4.0.6 \
 --type=maven-project \
 --java-version=25 \
 --packaging=jar \
@@ -13,7 +13,7 @@ spring init \
 product-service
 
 spring init \
---boot-version=4.0.5 \
+--boot-version=4.0.6 \
 --type=maven-project \
 --java-version=25 \
 --packaging=jar \
@@ -25,7 +25,7 @@ spring init \
 review-service
 
 spring init \
---boot-version=4.0.5 \
+--boot-version=4.0.6 \
 --type=maven-project \
 --java-version=25 \
 --packaging=jar \
@@ -37,7 +37,7 @@ spring init \
 recommendation-service
 
 spring init \
---boot-version=4.0.5 \
+--boot-version=4.0.6 \
 --type=maven-project \
 --java-version=25 \
 --packaging=jar \
