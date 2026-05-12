@@ -1,5 +1,7 @@
-server.port: 7001
-server.error.include-message: always
+server:
+  port: 7001
+  error:
+    include-message: always
 
 app:
   product-service:

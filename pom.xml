@@ -20,8 +20,14 @@
     <module>chapter03/2-basic-rest-services/product-service</module>
     <module>chapter03/2-basic-rest-services/recommendation-service</module>
     <module>chapter03/2-basic-rest-services/review-service</module>
-
+    <module>chapter04/api</module>
+    <module>chapter04/util</module>
+    <module>chapter04/product-composite-service</module>
+    <module>chapter04/product-service</module>
+    <module>chapter04/recommendation-service</module>
     <!--
+    <module>chapter04/review-service</module>
+
     
     <module>chapter2/recipe2-4/footballauth</module>
     <module>chapter2/recipe2-4/footballresource</module>
