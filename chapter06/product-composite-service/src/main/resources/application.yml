@@ -5,7 +5,6 @@ springdoc:
   pathsToMatch: /**
 
 api:
-
   common:
     version: 1.0.0
     title: Sample API
@@ -22,10 +21,14 @@ api:
       email: contact@mail.com
 
   responseCodes:
-    ok.description: OK
-    badRequest.description: Bad Request, invalid format of the request. See response message for more information
-    notFound.description: Not found, the specified id does not exist
-    unprocessableEntity.description: Unprocessable entity, input parameters caused the processing to fail. See response message for more information
+    ok:
+      description: OK
+    badRequest:
+      description: Bad Request, invalid format of the request. See response message for more information
+    notFound:
+      description: Not found, the specified id does not exist
+    unprocessableEntity:
+      description: Unprocessable entity, input parameters caused the processing to fail. See response message for more information
 
   product-composite:
 
@@ -62,8 +65,10 @@ api:
 
         This means that a delete request of a non-existing product will return **200 Ok**.
 
-server.port: 7001
-server.error.include-message: always
+server:
+  port: 7001
+  error:
+    include-message: always
 
 app:
   product-service:
@@ -82,9 +87,13 @@ logging:
     se.magnus: DEBUG
 
 ---
-spring.config.activate.on-profile: docker
+spring:
+  config:
+    activate:
+      on-profile: docker
 
-server.port: 8080
+server:
+  port: 8080
 
 app:
   product-service:
