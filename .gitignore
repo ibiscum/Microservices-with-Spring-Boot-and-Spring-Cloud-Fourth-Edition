@@ -2,6 +2,18 @@ HELP.md
 .gradle
 build/
 target/
+*.log
+*.tmp
+*.bak
+*.swp
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.iws
+*.ipr
+*.idea/
 
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
