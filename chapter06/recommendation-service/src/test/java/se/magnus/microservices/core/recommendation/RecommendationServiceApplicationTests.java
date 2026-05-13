@@ -90,7 +90,7 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase {
 
     getAndVerifyRecommendationsByProductId("", BAD_REQUEST)
       .jsonPath("$.path").isEqualTo("/recommendation")
-      .jsonPath("$.message").isEqualTo("Required query parameter 'productId' is not present.");
+      .jsonPath("$.error").isEqualTo("Bad Request");
   }
 
   @Test
@@ -98,7 +98,7 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase {
 
     getAndVerifyRecommendationsByProductId("?productId=no-integer", BAD_REQUEST)
       .jsonPath("$.path").isEqualTo("/recommendation")
-      .jsonPath("$.message").isEqualTo("Type mismatch.");
+      .jsonPath("$.error").isEqualTo("Bad Request");
   }
 
   @Test

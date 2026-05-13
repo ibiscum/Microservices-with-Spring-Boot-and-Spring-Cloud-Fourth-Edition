@@ -46,11 +46,12 @@
         <module>chapter06/api</module>
         <module>chapter06/util</module>
         <module>chapter06/product-service</module>
-
-        <!--
-        <module>chapter06/product-composite-service</module>
         <module>chapter06/recommendation-service</module>
         <module>chapter06/review-service</module>
+        <module>chapter06/product-composite-service</module>
+
+        <!--
+
         -->
   </modules>
 
