@@ -3,7 +3,7 @@ package se.magnus.microservices.composite.product.services;
 import static org.springframework.http.HttpMethod.GET;
 
 import tools.jackson.databind.ObjectMapper;
-import java.io.IOException;
+// import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
