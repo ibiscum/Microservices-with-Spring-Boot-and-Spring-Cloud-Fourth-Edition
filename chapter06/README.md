@@ -2,3 +2,5 @@
 
     docker run -t --rm -v ${PWD}:/app zavoloklom/dclint ./docker-compose.yml
     ./gradlew :microservices:product-service:test --tests PersistenceTests
+
+	curl "http://localhost:7002/product/1"

@@ -1,83 +1,89 @@
 package se.magnus.api.core.recommendation;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Recommendation {
-  private int productId;
-  private int recommendationId;
-  private String author;
-  private int rate;
-  private String content;
-  private String serviceAddress;
+    private int productId;
+    private int recommendationId;
+    private String author;
+    private int rate;
+    private String content;
+    private String serviceAddress;
 
-  public Recommendation() {
-    productId = 0;
-    recommendationId = 0;
-    author = null;
-    rate = 0;
-    content = null;
-    serviceAddress = null;
-  }
+    public Recommendation() {
+        // productId = 0;
+        // recommendationId = 0;
+        // author = null;
+        // rate = 0;
+        // content = null;
+        // serviceAddress = null;
+    }
 
-  public Recommendation(
-    int productId,
-    int recommendationId,
-    String author,
-    int rate,
-    String content,
-    String serviceAddress) {
+    @JsonCreator
+    public Recommendation(
+            @JsonProperty("productId") int productId,
+            @JsonProperty("recommendationId") int recommendationId,
+            @JsonProperty("author") String author,
+            @JsonProperty("rate") int rate,
+            @JsonProperty("content") String content,
+            @JsonProperty("serviceAddress") String serviceAddress) {
 
-    this.productId = productId;
-    this.recommendationId = recommendationId;
-    this.author = author;
-    this.rate = rate;
-    this.content = content;
-    this.serviceAddress = serviceAddress;
-  }
+        this.productId = productId;
+        this.recommendationId = recommendationId;
+        this.author = author;
+        this.rate = rate;
+        this.content = content;
+        this.serviceAddress = serviceAddress;
+    }
 
-  public int getProductId() {
-    return productId;
-  }
+    // 3. Setter (Ermöglichen Änderungen nach der Erstellung)
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
-  public int getRecommendationId() {
-    return recommendationId;
-  }
+    public void setRecommendationId(int recommendationId) {
+        this.recommendationId = recommendationId;
+    }
 
-  public String getAuthor() {
-    return author;
-  }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-  public int getRate() {
-    return rate;
-  }
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
 
-  public String getContent() {
-    return content;
-  }
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-  public String getServiceAddress() {
-    return serviceAddress;
-  }
+    public void setServiceAddress(String serviceAddress) {
+        this.serviceAddress = serviceAddress;
+    }
 
-  public void setProductId(int productId) {
-    this.productId = productId;
-  }
+    // 4. Getter (Ermöglichen Zugriff auf die Werte)
+    public int getProductId() {
+        return productId;
+    }
 
-  public void setRecommendationId(int recommendationId) {
-    this.recommendationId = recommendationId;
-  }
+    public int getRecommendationId() {
+        return recommendationId;
+    }
 
-  public void setAuthor(String author) {
-    this.author = author;
-  }
+    public String getAuthor() {
+        return author;
+    }
 
-  public void setRate(int rate) {
-    this.rate = rate;
-  }
+    public int getRate() {
+        return rate;
+    }
 
-  public void setContent(String content) {
-    this.content = content;
-  }
+    public String getContent() {
+        return content;
+    }
 
-  public void setServiceAddress(String serviceAddress) {
-    this.serviceAddress = serviceAddress;
-  }
+    public String getServiceAddress() {
+        return serviceAddress;
+    }
 }

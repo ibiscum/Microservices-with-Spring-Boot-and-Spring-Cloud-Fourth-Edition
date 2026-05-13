@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>se.magnus.microservices</groupId>
-  <artifactId>book</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Microservices with Spring Boot and Spring Cloud - Fourth Edition</name>
-  <packaging>pom</packaging>
-  <description>Microservices with Spring Boot and Spring Cloud - Fourth Edition</description>
-  <properties>
-    <java.version>25</java.version>
-    <spring-boot.version>4.0.6</spring-boot.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <netty.version>4.2.13.Final</netty.version>
-  </properties>
+    <groupId>se.magnus.microservices</groupId>
+    <artifactId>book</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Microservices with Spring Boot and Spring Cloud - Fourth Edition</name>
+    <packaging>pom</packaging>
+    <description>Microservices with Spring Boot and Spring Cloud - Fourth Edition</description>
 
-  <modules>
-    <module>chapter03/1-spring-init/product-composite-service</module>
-    <module>chapter03/1-spring-init/product-service</module>
-    <module>chapter03/1-spring-init/recommendation-service</module>
-    <module>chapter03/1-spring-init/review-service</module>
-    <module>chapter03/2-basic-rest-services/api</module>
-    <module>chapter03/2-basic-rest-services/util</module>
-    <module>chapter03/2-basic-rest-services/product-composite-service</module>
-    <module>chapter03/2-basic-rest-services/product-service</module>
-    <module>chapter03/2-basic-rest-services/recommendation-service</module>
-    <module>chapter03/2-basic-rest-services/review-service</module>
-    <module>chapter04/api</module>
-    <module>chapter04/util</module>
-    <module>chapter04/product-composite-service</module>
-    <module>chapter04/product-service</module>
-    <module>chapter04/recommendation-service</module>
-    <module>chapter04/review-service</module>
-    <module>chapter05/api</module>
-    <module>chapter05/util</module>
-    <module>chapter05/product-composite-service</module>
-    <module>chapter05/product-service</module>
-    <module>chapter05/recommendation-service</module>
-    <module>chapter05/review-service</module>
+    <properties>
+        <java.version>25</java.version>
+        <spring-boot.version>4.0.6</spring-boot.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <netty.version>4.2.13.Final</netty.version>
+    </properties>
+
+    <modules>
+        <module>chapter03/1-spring-init/product-composite-service</module>
+        <module>chapter03/1-spring-init/product-service</module>
+        <module>chapter03/1-spring-init/recommendation-service</module>
+        <module>chapter03/1-spring-init/review-service</module>
+        <module>chapter03/2-basic-rest-services/api</module>
+        <module>chapter03/2-basic-rest-services/util</module>
+        <module>chapter03/2-basic-rest-services/product-composite-service</module>
+        <module>chapter03/2-basic-rest-services/product-service</module>
+        <module>chapter03/2-basic-rest-services/recommendation-service</module>
+        <module>chapter03/2-basic-rest-services/review-service</module>
+
+        <module>chapter04/api</module>
+        <module>chapter04/util</module>
+        <module>chapter04/product-composite-service</module>
+        <module>chapter04/product-service</module>
+        <module>chapter04/recommendation-service</module>
+        <module>chapter04/review-service</module>
+
+        <module>chapter05/api</module>
+        <module>chapter05/util</module>
+        <module>chapter05/product-composite-service</module>
+        <module>chapter05/product-service</module>
+        <module>chapter05/recommendation-service</module>
+        <module>chapter05/review-service</module>
+
+        <module>chapter06/api</module>
+        <module>chapter06/util</module>
+        <module>chapter06/product-service</module>
+
+        <!--
+        <module>chapter06/product-composite-service</module>
+        <module>chapter06/recommendation-service</module>
+        <module>chapter06/review-service</module>
+        -->
   </modules>
 
 </project>

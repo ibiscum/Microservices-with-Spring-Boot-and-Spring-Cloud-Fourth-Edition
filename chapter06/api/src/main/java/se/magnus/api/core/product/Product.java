@@ -1,54 +1,63 @@
 package se.magnus.api.core.product;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Product {
-  private int productId;
-  private String name;
-  private int weight;
-  private String serviceAddress;
+    private int productId;
+    private String name;
+    private int weight;
+    private String serviceAddress;
 
-  public Product() {
-    productId = 0;
-    name = null;
-    weight = 0;
-    serviceAddress = null;
-  }
+    public Product() {
+        // productId = 0;
+        // name = null;
+        // weight = 0;
+        // serviceAddress = null;
+    }
 
-  public Product(int productId, String name, int weight, String serviceAddress) {
-    this.productId = productId;
-    this.name = name;
-    this.weight = weight;
-    this.serviceAddress = serviceAddress;
-  }
+    @JsonCreator
+    public Product(
+            @JsonProperty("productId") int productId,
+            @JsonProperty("name") String name,
+            @JsonProperty("weight") int weight,
+            @JsonProperty("serviceAddress") String serviceAddress) {
+        this.productId = productId;
+        this.name = name;
+        this.weight = weight;
+        this.serviceAddress = serviceAddress;
+    }
 
-  public int getProductId() {
-    return productId;
-  }
+    // 3. Setter (Ermöglichen Änderungen nach der Erstellung)
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public int getWeight() {
-    return weight;
-  }
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 
-  public String getServiceAddress() {
-    return serviceAddress;
-  }
+    public void setServiceAddress(String serviceAddress) {
+        this.serviceAddress = serviceAddress;
+    }
 
-  public void setProductId(int productId) {
-    this.productId = productId;
-  }
+    public int getProductId() {
+        return productId;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setWeight(int weight) {
-    this.weight = weight;
-  }
+    public int getWeight() {
+        return weight;
+    }
 
-  public void setServiceAddress(String serviceAddress) {
-    this.serviceAddress = serviceAddress;
-  }
+    public String getServiceAddress() {
+        return serviceAddress;
+    }
 }

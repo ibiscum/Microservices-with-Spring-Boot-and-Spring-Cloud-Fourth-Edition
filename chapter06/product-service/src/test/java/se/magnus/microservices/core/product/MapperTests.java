@@ -7,10 +7,13 @@ import org.mapstruct.factory.Mappers;
 import se.magnus.api.core.product.Product;
 import se.magnus.microservices.core.product.persistence.ProductEntity;
 import se.magnus.microservices.core.product.services.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 class MapperTests {
 
+    @Autowired
     private ProductMapper mapper = Mappers.getMapper(ProductMapper.class);
+    // private ProductMapper mapper;
 
     @Test
     void mapperTests() {
