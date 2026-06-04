@@ -18,30 +18,31 @@
     </properties>
 
     <modules>
-        <module>chapter03/1-spring-init/product-composite-service</module>
         <module>chapter03/1-spring-init/product-service</module>
         <module>chapter03/1-spring-init/recommendation-service</module>
         <module>chapter03/1-spring-init/review-service</module>
+        <module>chapter03/1-spring-init/product-composite-service</module>
+
         <module>chapter03/2-basic-rest-services/api</module>
         <module>chapter03/2-basic-rest-services/util</module>
-        <module>chapter03/2-basic-rest-services/product-composite-service</module>
         <module>chapter03/2-basic-rest-services/product-service</module>
         <module>chapter03/2-basic-rest-services/recommendation-service</module>
         <module>chapter03/2-basic-rest-services/review-service</module>
+        <module>chapter03/2-basic-rest-services/product-composite-service</module>
 
         <module>chapter04/api</module>
         <module>chapter04/util</module>
-        <module>chapter04/product-composite-service</module>
         <module>chapter04/product-service</module>
         <module>chapter04/recommendation-service</module>
         <module>chapter04/review-service</module>
+        <module>chapter04/product-composite-service</module>
 
         <module>chapter05/api</module>
         <module>chapter05/util</module>
-        <module>chapter05/product-composite-service</module>
         <module>chapter05/product-service</module>
         <module>chapter05/recommendation-service</module>
         <module>chapter05/review-service</module>
+        <module>chapter05/product-composite-service</module>
 
         <module>chapter06/api</module>
         <module>chapter06/util</module>
@@ -50,9 +51,7 @@
         <module>chapter06/review-service</module>
         <module>chapter06/product-composite-service</module>
 
-        <!--
 
-        -->
   </modules>
 
 </project>
