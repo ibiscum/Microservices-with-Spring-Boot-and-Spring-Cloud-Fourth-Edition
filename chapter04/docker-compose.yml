@@ -1,13 +1,13 @@
-name: chapter04
+name: Microservices-Spring-Boot-and-Spring-Cloud
 services:
   product:
-    image: ch04-product-service:1.0.0-SNAPSHOT
+    image: ch04-product-service:v1.0.0
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     mem_limit: 512m
 
   product-composite:
-    image: ch04-product-composite-service:1.0.0-SNAPSHOT
+    image: ch04-product-composite-service:v1.0.0
     depends_on:
       review:
         condition: service_started
@@ -18,7 +18,7 @@ services:
     mem_limit: 512m
 
   recommendation:
-    image: ch04-recommendation-service:1.0.0-SNAPSHOT
+    image: ch04-recommendation-service:v1.0.0
     depends_on:
       product:
         condition: service_started
@@ -27,7 +27,7 @@ services:
     mem_limit: 512m
 
   review:
-    image: ch04-review-service:1.0.0-SNAPSHOT
+    image: ch04-review-service:v1.0.0
     depends_on:
       recommendation:
         condition: service_started

@@ -96,7 +96,7 @@
                     <container>
                         <mainClass>se.magnus.microservices.composite.product.ProductCompositeServiceApplication</mainClass>
                         <ports>
-                            <port>8080</port>
+                            <port>8083</port>
                         </ports>
                     </container>
                 </configuration>
