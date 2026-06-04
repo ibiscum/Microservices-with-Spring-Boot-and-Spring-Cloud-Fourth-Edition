@@ -73,6 +73,41 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <from>
+                        <image>dhi.io/eclipse-temurin:25-alpine3.23-dev</image>
+                        <platforms>
+                            <platform>
+                                <architecture>arm64</architecture>
+                                <os>linux</os>
+                            </platform>
+                        </platforms>
+                    </from>
+                    <to>
+                        <image>ch04-review-service</image>
+                        <tags>
+                            <tag>v1.0.0</tag>
+                        </tags>
+                    </to>
+                    <container>
+                        <mainClass>se.magnus.microservices.core.review.ReviewServiceApplication</mainClass>
+                        <ports>
+                            <port>8082</port>
+                        </ports>
+                    </container>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.luben</groupId>
+                        <artifactId>zstd-jni</artifactId>
+                        <version>1.5.6-3</version> <!-- Nutze eine stabile, aktuelle Version -->
+                    </dependency>
+                </dependencies>
+            </plugin>
 		</plugins>
 	</build>
 
