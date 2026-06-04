@@ -10,20 +10,19 @@
     echo 'new byte[100_000_000]' | docker run -i --rm -m=1024M eclipse-temurin:24 jshell -q
     echo 'new byte[500_000_000]' | docker run -i --rm -m=1024M eclipse-temurin:24 jshell -q
 
-    ./gradlew :microservices:product-service:build
-    ./gradlew :microservices:product-composite-service:build
-    ./gradlew :microservices:recommendation-service:build
-    ./gradlew :microservices:review-service:build
-
-    cd microservices/product-service
+    cd chapter04/product-service
     docker run --rm -i hadolint/hadolint < Dockerfile
     docker build -t product-service .
-    docker images | grep product-service
+
+	mvn clean package jib:dockerBuild -Djib.container.mainClass=se.magnus.microservices.core.product.ProductServiceApplication -Djib.from.platforms=linux/arm64 -DskipTests
     docker run --rm -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" product-service
+
+	mvn clean package jib:dockerBuild -Djib.container.mainClass=se.magnus.microservices.composite.product.ProductCompositeServiceApplication -Djib.from.platforms=linux/arm64 -DskipTests
+    docker run --rm -p8081:8080 -e "SPRING_PROFILES_ACTIVE=docker" product-compsite-service
 
     curl localhost:8080/product/3
     docker ps
-    docker run -d -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" --name my-prd-srv product-service
+    docker run -d -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" --name ch04-prd-cmp-srv ch04-product-composite-service:v1.0.0
     docker logs my-prd-srv -f
     docker rm -f my-prd-srv
 

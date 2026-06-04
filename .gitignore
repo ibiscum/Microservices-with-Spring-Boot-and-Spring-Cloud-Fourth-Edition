@@ -13,7 +13,6 @@ target/
 *.iml
 *.iws
 *.ipr
-*.idea/
 
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
@@ -52,3 +51,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Environment variables ###
+.env
